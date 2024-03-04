@@ -1,56 +1,66 @@
 import React,{useState} from 'react';
 import './LoginSignup.css';
 import {FaLock,FaUser,FaEnvelope} from "react-icons/fa";
+import { Link } from 'react-router-dom';
+
 
 
 const LoginSignup =() =>{
-
-    const [action, setAction] = useState("Login")
-
-
+    
+    const[inputs,setInputs] = useState({})
+    const handleChange = (event) =>{
+        const name = event.target.name;
+        const value = event.target.value;
+     setInputs(values =>({values,[name]: value})); ///stores all the details from form
+    
+    }
+    const handleSubmit = (event) =>{
+        event.preventDefualt();
+        console.log(inputs);
+    }
 
     return(
     <div className='container'>
         <div className='header'>
-            <div className='text'>{action}</div>
+            <div className='text'>Sign up</div>
             <div className='underline'></div>
         </div>
 
-       <form>
-                <div className='inputs'>
-            {action==="Login"?<div></div>: <div className='input'>
-                <FaLock className='icon'/>
-                <input type='text'placeholder='name' name="name"/>
-            </div>}
+        <form onSubmit={handleSubmit}>
+        <div className='inputs'>
+             <div className='input'>
+                <FaUser className='icon'/>
+                <input type='text'placeholder='name' name="name" onChange={handleChange}/>
+            </div>
            
 
             <div className='input'>
                 <FaEnvelope className='icon'/>
-                <input type='email' placeholder='exapme@email.com' name="email"/>
+                <input type='email' placeholder='example@email.com' name="email" onChange={handleChange}/>
             </div>
 
             <div className='input'>
                 <FaLock  className='icon'/>
-                <input type='password' placeholder='password' name="password"/>
+                <input type='password' placeholder='password' name="password" onChange={handleChange}/>
             </div>
 
-          {action==="Login"?<div></div>:   <div className='input'>
+          <div className='input'>
                 <FaLock  className='icon'/>
-                <input type='password' placeholder='confirm password' name='Cpassword'/>
-            </div>}
+                <input type='password' placeholder='confirm password' name='Cpassword' onChange={handleChange}/>
+            </div>
         </div>
-        {action==="Sign Up"?<div></div>: <div className="forgot-password">did you forget your password ?<span>click here</span></div>}
-
 
         <div className='submit-container'>
-            <div className={action ==="Login"?"submit gray": "submit"} onClick={()=>{setAction("Sign Up")}}> Sign Up</div>
-            <div className={action==="Sign Up"?"submit gray": "submit"} onClick={()=>{setAction("Login")}}> Login</div>
+        <button className="submit" >Sign Up</button>
+
+            <div className="submitG" >
+            <Link to='Logins'>Login</Link>
+            </div>
         </div>
-       
-       </form>
+        </form>
     </div>
     )
 }
 
 
-export default Loginsignup;
+export default LoginSignup;
