@@ -24,6 +24,12 @@
     font-weight: 700;
 }
 
+.text2{
+    color: white;
+    font-size: 48px;
+    font-weight: 700;
+}
+
 .underline{
     width: 61px;
     height: 6px;
@@ -83,6 +89,7 @@
     display: flex;
     margin: 60px auto;
     gap: 30px;
+    margin-left: 65px;
 
 }
 
@@ -98,11 +105,30 @@
     font-size: 19px;
     font-weight: 700px;
     cursor: pointer;
+    border: none;
 
+}
+.submitG{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 220px;
+    height: 59px;
+    color: hwb(34 84% 2%);
+    background: gray;
+    border-radius: 50px;
+    font-size: 19px;
+    font-weight: 700px;
+    cursor: pointer;
+    border: none;
 
 }
 
 .gray{
     background: gray;
+    color:white;
     
+}
+.l{
+    color: white;
 }
