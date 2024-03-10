@@ -4,7 +4,7 @@ import {FaLock,FaEnvelope} from "react-icons/fa";
 import { Link } from 'react-router-dom';
 
 
-//this is login page
+
 
 const Login =()=>{
 
@@ -12,11 +12,11 @@ const[inputs,setInputs] = useState({})
 const handleChange = (event) =>{
     const name = event.target.name;
     const value = event.target.value;
- setInputs(values =>({values,[name]: value})); ///stores all the details from form
+ setInputs(values => ({...values,[name]: value})); ///stores all the details from form
 
 }
 const handleSubmit = (event) =>{
-    event.preventDefualt();
+    event.preventDefault();
     console.log(inputs);
 }
     return(
@@ -45,7 +45,7 @@ const handleSubmit = (event) =>{
 
         <div className='submit-container'>
             <div className="submitG">
-                <Link to='LoginSignup' className='l' >Sign Up</Link>
+                <Link to='/signup' className='l' >Sign Up</Link>
             </div>
             <button className="submit" >Login</button>
         </div>
