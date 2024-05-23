@@ -7,7 +7,7 @@ const ServiceSection = () => {
         <h2>Our Services</h2>
         <div className="service-list">
           <div className="service-item">
-            <h3>Categorise according to their tribe</h3>
+            <h3>Categorise users according to their tribe</h3>
             <p>We help a users know which tribe they fall into.</p>
           </div>
           <div className="service-item">
@@ -20,7 +20,7 @@ const ServiceSection = () => {
           </div>
           <div className="service-item">
             <h3>Clan knowledge</h3>
-            <p>We help users ton deeply know their clan names.</p>
+            <p>We help users to deeply know their clan names.</p>
           </div>
         </div>
       </div>
