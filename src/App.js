@@ -4,6 +4,7 @@ import LogInForm from './components/LogInForm';
 import SignUpForm from './components/SignUpForm ';
 import Home from './components/Home';
 import Navbar from './components/NavBar';
+import ServiceSection from './components/services';
 import SearchBar from './components/EnterURL';
 import ContactUs from './components/ContactUs';
 import AboutUs from './components/AboutUs';
@@ -46,6 +47,12 @@ function App() {
             element=
             {<ContentMenu/>}
           />
+
+<Route path="/services"
+            element=
+            {<ServiceSection/>}
+          />
+
 
          
         </Routes>
