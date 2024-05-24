@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { Form, Button, Table } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-import styles from './style.module.css';
+import styles from './styles.css';
 import styles1 from './ContentMenu.module.css'; // Import CSS file for styling
 
 const SignUpForm = () => {
@@ -71,12 +71,13 @@ const SignUpForm = () => {
   };
 
   return (
-    <div className={styles.main}>
-      <div className={styles.login}>
+    <div class="loginbody">
+      <div >
         <div style={{ textAlign: 'center' }}>
-          <h4>SignUp</h4>
+          
           {error && <p style={{ color: 'red' }}>{error}</p>}
-          <Form onSubmit={handleSubmit}>
+          <Form onSubmit={handleSubmit} >
+          <h4>SignUp</h4>
             <Table hover responsive>
               <tbody>
                 <tr>
