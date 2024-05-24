@@ -37,6 +37,7 @@ header {
     height: 100vh;
     width: 100%;
 	display: flex;
+  justify-content: center;
     align-items: center;
 }
 
@@ -119,3 +120,29 @@ footer {
       display: block;
     }
   }
+
+  form {
+    width: 500px;
+    height: 40vh;
+    background-color: #fffdf5;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.loginbody {
+  font-family: Arial, sans-serif;
+  background-image: url('b2.jpg');
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.loginlabel {
+  display: block;
+  margin-bottom: 12px;
+  color: #111111;
+}
