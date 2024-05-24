@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card } from 'react-bootstrap';
 import { Phone, Whatsapp } from 'react-bootstrap-icons';
-import styles from './style.module.css';
+import styles from './styles.css';
 
 export default function AboutUs() {
   return (
