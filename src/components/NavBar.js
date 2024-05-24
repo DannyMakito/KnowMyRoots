@@ -44,7 +44,7 @@ useEffect(() => {
     <div className="logo">Logo</div>
     <ul className="nav-links">
    <li> <Link to="/home">Home</Link></li>
-   <li> <Link to="/home">servies</Link></li>
+   <li> <Link to="/services">servies</Link></li>
    <li> <Link to="/aboutus">about</Link></li>
     </ul>
     <div className="burger" >
