@@ -9,7 +9,7 @@ import ContactUs from './components/ContactUs';
 import AboutUs from './components/AboutUs';
 import ContentMenu from './components/ContentMenu';
 import { useEffect, useState } from 'react';
-import styles from './components/style.module.css'
+import styles from './components/styles.css'
 
 function App() {
   
