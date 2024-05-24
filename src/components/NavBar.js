@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Navbar as BootstrapNavbar, Nav } from 'react-bootstrap';
-import styles from './style.module.css'
+import styles from './styles.css'
 import axios from 'axios';
+
 
 
 const Navbar = () => {
@@ -39,35 +40,19 @@ useEffect(() => {
   }
 }, [localUsername]);
   return (
-    <div className={styles.navBarS}>
-    <BootstrapNavbar expand="lg" bg='dark' data-bs-theme="dark">
-      <div className="container">
-        <Link className="navbar-brand" to="/">
-        <h2 >Know My Roots</h2>
-        </Link>
-        <BootstrapNavbar.Toggle  className={styles.navBarS} aria-controls="navbarNav" />
-        <BootstrapNavbar.Collapse id="navbarNav"  className="justify-content-end">
-          <Nav variant="underline" defaultActiveKey="/home" className="ml-auto" >
-            <Link className="nav-link" to="/" >
-             <p className={styles.navBarLinkS}>Home</p>
-            </Link>
-            <Link className="nav-link" to="/aboutus">
-            <p className={styles.navBarLinkS}>About Us</p>
-            </Link>
-            <Link className="nav-link" to="/contactus" >
-            <p className={styles.navBarLinkS}>Contact Us</p>
-            </Link>
-            <Link className="nav-link" to="/signup">
-            <p className={styles.navBarLinkS}>Create Account</p>
-            </Link>
-            <Link className="nav-link" to="/signin" >
-            <p className={styles.navBarLinkS}>Dashboard</p>
-            </Link>
-          </Nav>
-        </BootstrapNavbar.Collapse>
-      </div>
-    </BootstrapNavbar>
+    <nav className="navbar">
+    <div className="logo">Logo</div>
+    <ul className="nav-links">
+   <li> <Link to="/home">Home</Link></li>
+   <li> <Link to="/home">servies</Link></li>
+   <li> <Link to="/aboutus">about</Link></li>
+    </ul>
+    <div className="burger" >
+      <div className="line1"></div>
+      <div className="line2"></div>
+      <div className="line3"></div>
     </div>
+  </nav>
   );
 };
 
