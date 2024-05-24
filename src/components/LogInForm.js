@@ -2,9 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { Form, Button, Table } from 'react-bootstrap';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import styles from './style.module.css';
+import styles from './styles.css';
 import ContentMenu from './ContentMenu';
 import styles1 from './ContentMenu.module.css'; // Import CSS file for styling
+import { Link } from 'react-router-dom';
+
 
 const LogInForm = () => {
     const [formData, setFormData] = useState({
@@ -92,21 +94,22 @@ const LogInForm = () => {
 
     return (
         <>
-            <h4>LogIn Credentials</h4>
-            <div className={styles.login}>
+           
+            <div class="loginbody">
                 {(loggedIn == 1) ?
+                
 
                     <>
                         <ContentMenu />
                     </>
                     :
+                    
                     <>
-                        <Form onSubmit={handleSubmit}>
-                            <Table striped bordered hover responsive>
-                                <tbody>
-                                    <tr>
-                                        <td>Username :</td>
-                                        <td>
+                     
+                        <Form onSubmit={handleSubmit} className='form'>
+                        <h4 style={{padding:'20px',marginLeft:'100px'}}>LogIn Credentials</h4>
+                         <label class="loginlabel"> Username:</label>
+ 
                                             <Form.Control
                                                 type="text"
                                                 name="username"
@@ -115,11 +118,7 @@ const LogInForm = () => {
                                                 onChange={handleChange}
                                                 required
                                             />
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Password:</td>
-                                        <td>
+                                        <label class="loginlabel" >Password:</label>
                                             <Form.Control
                                                 type="password"
                                                 name="password"
@@ -128,15 +127,13 @@ const LogInForm = () => {
                                                 onChange={handleChange}
                                                 required
                                             />
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td colSpan="2">
-                                            <Button type="submit" variant="outline-success" className={styles1.fullWidthButton}>Log In</Button>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </Table>
+                                            <Link to="/signup" class="loginlabel" style={{padding:'20px'}}>Dont have an account? sign up</Link>
+                                           
+                                        
+ <Button type="submit" variant="outline-success" className={styles1.fullWidthButton}>Log In</Button>
+                                        
+                                 
+                           
                             {/* <Button  variant="outline-success" className={styles1.fullWidthButton} type="submit">Log In</Button> */}
                         </Form>
                     </>
