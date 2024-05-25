@@ -13,16 +13,7 @@ header {
     align-items: center;
 }
 
-.container {
-	background-image: url('b2.jpg'); /* replace with your image */
-	background-size: cover;
-	background-position: center;
-	height: 90vh;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	color: #060404; /* text color */
-}
+
 .content {
 	text-align: center;
 }
@@ -43,6 +34,10 @@ header {
 
 
 .hero {
+  background-image: url('b2.jpg');
+  background-size: cover;
+  height: 60vh;
+
     background-color: #f0f0f0;
     padding: 50px;
     text-align: center;
@@ -145,4 +140,24 @@ footer {
   display: block;
   margin-bottom: 12px;
   color: #111111;
+}
+
+.main-heading{
+font-size: 36px;
+font-family: "bold";
+padding-top: 50px;
+color: rgb(209, 145, 18);
+}
+
+.underline{
+  background-color: #c04210;
+  width: 6rem;
+  height: 04px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+}
+
+.bg-c-light{
+  background-color: #f2f2f2;
 }

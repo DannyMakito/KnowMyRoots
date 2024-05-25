@@ -5,7 +5,7 @@ import styles from './styles.css';
 
 export default function AboutUs() {
   return (
-    <Card className={styles.navComp}>
+    <Card >
       <Card.Body>
         <Card.Title><h1 className={styles.h1S} >About Us</h1></Card.Title>
         <Card.Text>

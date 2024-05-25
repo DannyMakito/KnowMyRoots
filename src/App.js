@@ -11,14 +11,13 @@ import AboutUs from './components/AboutUs';
 import ContentMenu from './components/ContentMenu';
 import { useEffect, useState } from 'react';
 import styles from './components/styles.css'
+import Footer from './components/Footer';
+
 
 function App() {
   
   return (
-    <div className={styles.main}>
-     {/* <SignUpForm/> */}
-     {/* <LogInForm/> */}
-     {/* <NavigationBar/> */}
+  
     
      <BrowserRouter>
      <Navbar/>
@@ -54,10 +53,11 @@ function App() {
           />
 
 
-         
+        
         </Routes>
+        <Footer />
       </BrowserRouter>
-    </div>
+
   );
 }
 
