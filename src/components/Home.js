@@ -3,6 +3,7 @@ import styles from './styles.css'
 import { Card, Col, Navbar, Row,Button  } from 'react-bootstrap';
 import { Container } from 'react-bootstrap';
 import ServiceSection from './services';
+import Footer from './Footer';
 
 import { Link } from 'react-router-dom';
 
@@ -38,6 +39,7 @@ export default function Home() {
         <div style={{marginBottom :'60px'}}></div>
        
         <ServiceSection/>
+      
 
     </div>
   

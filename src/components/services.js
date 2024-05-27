@@ -6,6 +6,7 @@ import Row from 'react-bootstrap/Row';
 import search from '../images/search.png';
 import iaf from '../images/iaf.jpg';
 import zb from '../images/zuluboy.jpg';
+import Footer from './Footer';
 
 const ServiceSection = () => {
   return (
@@ -15,7 +16,7 @@ const ServiceSection = () => {
             <h1 class="main-heading">Our services</h1>
             <div class="underline mx-auto"></div>
               
-            <Row style={{marginTop: '50px',justifyContent:'space-evenly',}}>
+            <Row style={{marginTop: '50px',justifyContent:'space-evenly', marginBottom: '50px'}}>
      
 
                       <Card className='col-md-4'   style={{ width: '22rem',paddingBottom: '4rem', boxShadow: '10px'}}>
@@ -62,6 +63,8 @@ const ServiceSection = () => {
 
             </Col>
           </Row>
+
+          <Footer />
         </section>
    
   );
