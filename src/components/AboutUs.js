@@ -2,20 +2,31 @@ import React from 'react';
 import { Card } from 'react-bootstrap';
 import { Phone, Whatsapp } from 'react-bootstrap-icons';
 import styles from './styles.css';
-import Footer from './Footer';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye, faBullseye } from '@fortawesome/free-solid-svg-icons'; // Import the mission icon
 
 export default function AboutUs() {
   return (
     <Card >
       <Card.Body>
         <Card.Title><h1 className={styles.h1S} >About Us</h1></Card.Title>
-        <Card.Text>
-         <p className={styles.paraS}> At <strong><em>KnowMyRoots</em></strong>, we believe that understanding and celebrating cultural diversity is key to fostering a more inclusive and harmonious world. Our mission is to inspire curiosity and appreciation for the rich tapestry of cultures that make up our global community.</p>
-        </Card.Text>
+        <div style={{ textAlign: 'center', margin: '20px' }}>
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '50px' }}>
+            {/* Vision Section */}
+            <div style={{ textAlign: 'center' }}>
+              <FontAwesomeIcon icon={faEye} size="3x" color="#007bff" />
+              <h3>Our Vision</h3>
+              <p>To be the leading ancestry platform globally, inspiring people to discover and embrace their heritage, fostering a sense of identity and community.</p>
+            </div>
+            {/* Mission Section */}
+            <div style={{ textAlign: 'center' }}>
+              <FontAwesomeIcon icon={faBullseye} size="3x" color="#007bff" />
+              <h3>Our Mission</h3>
+              <p>Our mission is to empower individuals to explore their roots, connect with their cultural heritage, and build a shared understanding of our collective history.</p>
+            </div>
+          </div>
+        </div>
       </Card.Body>
-
-      <Footer />
     </Card>
-    
   );
 }
