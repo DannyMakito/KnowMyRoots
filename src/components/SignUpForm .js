@@ -76,7 +76,7 @@ const SignUpForm = () => {
         <div style={{ textAlign: 'center' }}>
           
           {error && <p style={{ color: 'red' }}>{error}</p>}
-          <Form onSubmit={handleSubmit} >
+          <Form class="form2" onSubmit={handleSubmit} >
           <h4>SignUp</h4>
             <Table hover responsive>
               <tbody>

@@ -66,7 +66,7 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #333;
+    background-color: #7ac6e0;
     color: #fff;
     padding: 1rem;
   }
@@ -78,10 +78,12 @@ footer {
     list-style: none;
     margin: 0;
     padding: 0;
+    text-decoration: none;
   }
   
   .nav-links li {
     margin-right: 20px;
+    text-decoration: none;
   }
   
   .burger {
@@ -116,6 +118,10 @@ footer {
     }
   }
 
+  .link{
+    text-decoration: none;
+    color: white;
+  }
   form {
     width: 500px;
     height: 40vh;
@@ -123,6 +129,15 @@ footer {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.form2{
+  width: 500px;
+  height: 70vh;
+  background-color: #fffdf5;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .loginbody {

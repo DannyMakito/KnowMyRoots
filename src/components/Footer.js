@@ -25,9 +25,9 @@ function Footer(){
                         <h6>SOME LINKS</h6>
                         <hr/>
                             <div><Link to="/">Home</Link></div>
-                            <div><Link to="/about">about</Link></div>
+                            <div><Link to="/aboutus">about</Link></div>
                             <div><Link to="/">contacts</Link></div>
-                            <div><Link to="/">new</Link></div>
+                            <div><Link to="/selection">new</Link></div>
                         </Col>
 
                         <Col md={4}>

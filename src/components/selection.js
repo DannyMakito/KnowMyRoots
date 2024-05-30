@@ -11,11 +11,11 @@ const pedi = {
   name: 'Sepedi',
   imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWs8qRLHXm4c9vLgvzHpW6clRBkjk57qea6yDXQExXvw&s.jpg',
   imageSize: 90,
-  linkUrl: 'https://sepedi.net',
+  linkUrl: '/aboutus',
 };
 
 
-export default function selection() {
+ const Selection =() =>{
   return (
     <div style={{ backgroundColor: '#f1d4a7', padding: '20px' }}>
       <div style={{ display: 'flex', justifyContent: 'center' }}>
@@ -49,3 +49,5 @@ export default function selection() {
     </div>
   );
 }
+
+export default Selection;

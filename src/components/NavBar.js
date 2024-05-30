@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Navbar as BootstrapNavbar, Nav } from 'react-bootstrap';
 import styles from './styles.css'
 import axios from 'axios';
+import logo2 from '../images/logo2.jpg'
 
 
 
@@ -41,11 +42,14 @@ useEffect(() => {
 }, [localUsername]);
   return (
     <nav className="navbar">
-    <div className="logo">Logo</div>
+    <div className="logo">
+      <img src={logo2}/>
+    </div>
     <ul className="nav-links">
-   <li> <Link to="/home">Home</Link></li>
-   <li> <Link to="/services">servies</Link></li>
-   <li> <Link to="/aboutus">about</Link></li>
+   <li> <Link to="/" class="link">Home</Link></li>
+   <li> <Link to="/signin" class="link">login</Link></li>
+   <li> <Link to="/services" class="link">servies</Link></li>
+   <li> <Link to="/aboutus" class="link">about</Link></li>
     </ul>
     <div className="burger" >
       <div className="line1"></div>

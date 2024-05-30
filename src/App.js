@@ -3,7 +3,9 @@ import './App.css';
 import LogInForm from './components/LogInForm';
 import SignUpForm from './components/SignUpForm ';
 import Home from './components/Home';
+import Selection from './components/Selection';
 import Navbar from './components/NavBar';
+import Homepage from './components/Homepage';
 import ServiceSection from './components/services';
 import SearchBar from './components/EnterURL';
 import ContactUs from './components/ContactUs';
@@ -33,6 +35,11 @@ function App() {
             {<ContactUs/>}
           />
 
+          <Route path="/homepage"
+            element=
+            {<Homepage/>}
+          />
+
 
           <Route path="/signup"
             element=
@@ -47,10 +54,15 @@ function App() {
             {<ContentMenu/>}
           />
 
-<Route path="/services"
-            element=
-            {<ServiceSection/>}
-          />
+          <Route path="/selection"
+                      element=
+                      {<Selection/>}
+                    />
+
+          <Route path="/services"
+                      element=
+                      {<ServiceSection/>}
+                    />
 
 
         
