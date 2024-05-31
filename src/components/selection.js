@@ -18,7 +18,8 @@ const pedi = {
 
 const Selection = () => {
   return (
-    <div style={{ backgroundColor: '#f1d4a7', padding: '20px', height: '100vh', width: '100vw', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+    <div style={{ backgroundColor: '#f1d4a7', padding: '20px', height: '100vh', width: '100vw', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+      <h1 style={{ textAlign: 'center', marginBottom: '20px' }}>Click on an image to explore its culture</h1>
       <div style={{ display: 'flex', justifyContent: 'center' }}>
         <div style={{ marginRight: '10px', width: 'calc(50% - 10px)' }}>
           <div style={{ textAlign: 'center', border: '2px solid #ddd', padding: '10px', borderRadius: '10px', margin: '10px' }}>
