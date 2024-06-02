@@ -1,9 +1,10 @@
 import React from 'react';
-import styles from './styles.css'
+import './styles.css';
 import { Card, Col, Navbar, Row,Button  } from 'react-bootstrap';
 import { Container } from 'react-bootstrap';
 import ServiceSection from './services';
-import Footer from './Footer';
+import NavBar from './NavBar';
+
 
 import { Link } from 'react-router-dom';
 
@@ -12,10 +13,12 @@ export default function Home() {
   return (
       
     <div>
+      <NavBar />
       <section class="hero">
+      
             <h1>Welcome to Knowmyroots Web</h1>
             <p>The purpose is to help a user  find and know more about the roots of their culture.</p>
-            <Link to="/signin" className="btn btn-primary">get started</Link>
+            <Link to="/signup" className="btn btn-primary">get started</Link>
         </section>
 
         <section>

@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { Form, Button, Table } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-import styles from './styles.css';
-import styles1 from './ContentMenu.module.css'; // Import CSS file for styling
+import styles1 from './styles.css'; 
 
 const SignUpForm = () => {
   const [error, setError] = useState(null);
@@ -74,9 +73,8 @@ const SignUpForm = () => {
     <div class="loginbody">
       <div >
         <div style={{ textAlign: 'center' }}>
-          
-          {error && <p style={{ color: 'red' }}>{error}</p>}
-          <Form class="form2" onSubmit={handleSubmit} >
+        {error && <p style={{ color: 'red' }}>{error}</p>}
+          <form  class="form2" onSubmit={handleSubmit} >
           <h4>SignUp</h4>
             <Table hover responsive>
               <tbody>
@@ -166,7 +164,11 @@ const SignUpForm = () => {
                 </tr>
               </tbody>
             </Table>
-          </Form>
+
+          </form>
+          
+          
+          
         </div>
       </div>
     </div>

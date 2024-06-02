@@ -1,11 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Navbar as BootstrapNavbar, Nav } from 'react-bootstrap';
-import styles from './styles.css'
+import style from './styles.css';
 import axios from 'axios';
-import logo2 from '../images/logo2.jpg'
-
-
 
 const Navbar = () => {
   const[loggedIn, setloggedIn] = useState();
@@ -41,15 +37,18 @@ useEffect(() => {
   }
 }, [localUsername]);
   return (
-    <nav className="navbar">
-    <div className="logo">
-      <img src={logo2}/>
+    <nav class="navbar1">
+    <div class="logo">
+        <h1>
+          Knowmyroot
+        </h1>
     </div>
-    <ul className="nav-links">
+    <ul class="nav-links">
    <li> <Link to="/" class="link">Home</Link></li>
    <li> <Link to="/signin" class="link">login</Link></li>
    <li> <Link to="/services" class="link">servies</Link></li>
    <li> <Link to="/aboutus" class="link">about</Link></li>
+   <li> <Link to="/homepage" class="link">mainpage</Link></li>
     </ul>
     <div className="burger" >
       <div className="line1"></div>

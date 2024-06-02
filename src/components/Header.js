@@ -1,9 +1,11 @@
 // src/Header.js
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Header.css';
 
 const Header = () => {
   const [menuVisible, setMenuVisible] = useState(false);
+  const navigate = useNavigate();
 
   const toggleMenu = () => {
     setMenuVisible(!menuVisible);
@@ -12,6 +14,7 @@ const Header = () => {
   const handleSignOut = () => {
     // Logic to handle sign out (e.g., clearing user session, redirecting, etc.)
     console.log('Sign Out clicked');
+    navigate('/');  
   };
 
   const handleKnowMyRootsClick = () => {
@@ -32,8 +35,8 @@ const Header = () => {
       <nav className="navbar">
         <a href="#home" className="nav-link">Home</a>
         <a href="#about" className="nav-link">About</a>
-        <a href="#services" className="nav-link">Services</a>
-        <a href="#contact" className="nav-link">Contact</a>
+        <a href="#services" className="nav-link">activies</a>
+        <a href="#contact" className="nav-link">Librey</a>
       </nav>
       <div className="right-section">
         <div className="sign-out" onClick={handleSignOut}>

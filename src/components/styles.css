@@ -62,11 +62,11 @@ footer {
     text-align: center;
 }
 
-.navbar {
+.navbar1{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #7ac6e0;
+    background-color: #394e3a;
     color: #fff;
     padding: 1rem;
   }
@@ -103,6 +103,7 @@ footer {
     .navbar {
       flex-direction: column;
       align-items: flex-start;
+      background-color: #394e3a;
     }
     .nav-links {
       display: none;

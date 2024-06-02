@@ -15,9 +15,9 @@ function Footer(){
                             <h6>Company Infomation</h6>
                             <hr/>
                             <p>
-                            "KnowMyCulture" could be envisioned as a comprehensive platform dedicated to promoting and 
+                            KnowMyRoot is as a comprehensive platform dedicated to promoting and 
                             preserving traditional cultures around the world. Such a platform would serve as a hub for cultural education,
-                             engagement, and preservation. Here’s a detailed vision for KnowMyCulture:
+                             engagement, and preservation. 
                             </p>
                         </Col>
 

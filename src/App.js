@@ -12,17 +12,14 @@ import ContactUs from './components/ContactUs';
 import AboutUs from './components/AboutUs';
 import ContentMenu from './components/ContentMenu';
 import { useEffect, useState } from 'react';
-import styles from './components/styles.css'
+import styles from './components/styles.css';
 
 
 
 function App() {
-  
   return (
-  
-    
      <BrowserRouter>
-     <Navbar/>
+     
         <Routes>
           <Route index element={<Home/>} />
           <Route path="/aboutus"
@@ -33,11 +30,6 @@ function App() {
           <Route path="/contactus"
             element=
             {<ContactUs/>}
-          />
-
-          <Route path="/homepage"
-            element=
-            {<Homepage/>}
           />
 
 
@@ -63,13 +55,17 @@ function App() {
                       element=
                       {<ServiceSection/>}
                     />
+           <Route path="/homepage"
+            element=
+            {<Homepage/>}
+          />
 
 
         
         </Routes>
         
       </BrowserRouter>
-
+    
   );
 }
 
