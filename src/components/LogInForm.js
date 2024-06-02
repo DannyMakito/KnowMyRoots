@@ -6,7 +6,9 @@ import styles from './styles.css';
 import ContentMenu from './ContentMenu';
 import styles1 from './ContentMenu.module.css'; // Import CSS file for styling
 import { Link } from 'react-router-dom';
-
+import LogInNavbar from './LogInNavbar';
+import Navbar from './NavBar';
+import Footer from './Footer'; // Import Footer component
 
 const LogInForm = () => {
     const [formData, setFormData] = useState({
@@ -17,7 +19,6 @@ const LogInForm = () => {
     const [username, setUsername] = useState('');
 
     const [loggedIn, setloggedIn] = useState();
-
 
     // Effect to load username from local storage on component mount
     useEffect(() => {
@@ -64,7 +65,7 @@ const LogInForm = () => {
             if (response.data.status) {
                 setUsername(formData.username);
                 localStorage.setItem('username', formData.username); // Store username in local storage
-                navigate('/content');
+                navigate('/darshboard');
                 alert('Successfully Logged In');
             } else {
                 alert('Invalid Password Or username.');
@@ -92,56 +93,85 @@ const LogInForm = () => {
         }
     }, [username]);
 
+    // Function to handle navigation
+    const handleToHome = () => {
+        navigate('/'); // Replace with your target route
+    };
+
     return (
-        <>
-           
-            <div class="loginbody">
-                {(loggedIn == 1) ?
-                
-
-                    <>
-                        <ContentMenu />
-                    </>
-                    :
-                    
-                    <>
-                     
-                        <Form onSubmit={handleSubmit} className='form'>
-                        <h4 style={{padding:'20px',marginLeft:'100px'}}>LogIn Credentials</h4>
-                         <label class="loginlabel"> Username:</label>
- 
-                                            <Form.Control
-                                                type="text"
-                                                name="username"
-                                                placeholder="Enter username"
-                                                value={formData.username}
-                                                onChange={handleChange}
-                                                required
-                                            />
-                                        <label class="loginlabel" >Password:</label>
-                                            <Form.Control
-                                                type="password"
-                                                name="password"
-                                                placeholder="Enter password"
-                                                value={formData.password}
-                                                onChange={handleChange}
-                                                required
-                                            />
-                                            <Link to="/signup" class="loginlabel" style={{padding:'20px'}}>Dont have an account? sign up</Link>
-                                           
-                                        
- <Button type="submit" variant="outline-success" className={styles1.fullWidthButton}>Log In</Button>
-                                        
-                                 
-                           
-                            {/* <Button  variant="outline-success" className={styles1.fullWidthButton} type="submit">Log In</Button> */}
-                        </Form>
-                    </>
-
-                }
-
+        <div className='app-container'>
+            <Navbar />
+            <div className='login-container' style={{width: '60vw', marginLeft: 'auto', 
+            marginRight: 'auto', marginTop: '8%', marginBottom: '8%',
+            borderRadius: '5px', backgroundColor: '#efe7e7', padding: '3%' }}>
+                <div className='login-form'>
+                    <Form onSubmit={handleSubmit}>
+                        <Table striped bordered hover responsive>
+                            <tbody>
+                                <tr>
+                                    <td colSpan="2"><h4 className='text-center'>LogIn Credentials</h4></td>
+                                </tr>
+                                <tr>
+                                    <td>Username</td>
+                                    <td>
+                                        <Form.Control
+                                            type="text"
+                                            name="username"
+                                            placeholder="Enter username"
+                                            value={formData.username}
+                                            onChange={handleChange}
+                                            required
+                                        />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Password</td>
+                                    <td>
+                                        <Form.Control
+                                            type="password"
+                                            name="password"
+                                            placeholder="Enter password"
+                                            value={formData.password}
+                                            onChange={handleChange}
+                                            required
+                                        />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colSpan="2">
+                                        <Button type="submit" variant="outline-success" className={styles1.fullWidthButton}>Log In</Button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colSpan="2">
+                                        <Link to="/reset" className='text-center' >
+                                            <Button style={{color: 'black'}} variant="outline-warning" className={styles1.fullWidthButton}  >
+                                                Reset Password
+                                            </Button>
+                                        </Link>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colSpan="2">
+                                        <Link to="/signup" className='text-center' >
+                                            <Button variant="outline-dark" className={styles1.fullWidthButton}  >
+                                                Don't have an account? Sign up
+                                            </Button>
+                                        </Link>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colSpan="2">
+                                        <Button variant="outline-dark" className={styles1.fullWidthButton} onClick={handleToHome} >Go To Home</Button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </Table>
+                    </Form>
+                </div>
             </div>
-        </>
+            <Footer />
+        </div>
     );
 };
 

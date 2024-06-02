@@ -11,7 +11,7 @@ const FacebookLink = () => {
   return (
     <div>
       <p onClick={handleFacebookClick}>
-      Follow Us On Facebook <Facebook size={20} style={{color: '#3b5998'}}></Facebook> At: KnowMyRoots
+        Facebook Us <Facebook size={20} style={{color: '#3b5998'}}></Facebook> At: KnowMyRoots
       </p>
     </div>
   );

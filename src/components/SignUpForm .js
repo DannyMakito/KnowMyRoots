@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { Form, Button, Table } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-import styles1 from './styles.css'; 
+import Navbar from './NavBar';
+import Footer from './Footer'; // Make sure to import Footer component
 
 const SignUpForm = () => {
   const [error, setError] = useState(null);
@@ -69,16 +70,34 @@ const SignUpForm = () => {
     }
   };
 
+  // Function to handle navigation
+  const handleToLogin = () => {
+    navigate('/signin'); // Replace with your target route
+  };
+
   return (
-    <div class="loginbody">
-      <div >
-        <div style={{ textAlign: 'center' }}>
-        {error && <p style={{ color: 'red' }}>{error}</p>}
-          <form  class="form2" onSubmit={handleSubmit} >
-          <h4>SignUp</h4>
-            <Table hover responsive>
+    <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+      <Navbar />
+      <div style={{
+        flex: '1',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center'
+      }}>
+        <div className='signup-container'  style={{width: '60vw', marginLeft: 'auto', 
+            marginRight: 'auto', marginTop: '8%', marginBottom: '8%',
+            borderRadius: '5px', backgroundColor: '#efe7e7', padding: '3%' }}>
+          {error && <p style={{ color: 'red' }}>{error}</p>}
+          <Form onSubmit={handleSubmit}>
+            <Table striped bordered hover responsive>
               <tbody>
                 <tr>
+                  <td colSpan="2"><h4 className='text-center'>SignUp</h4></td>
+                </tr>
+                <tr>
+                  <td>
+                    Enter Username
+                  </td>
                   <td>
                     <Form.Control
                       type="text"
@@ -86,12 +105,15 @@ const SignUpForm = () => {
                       placeholder="Enter username"
                       value={formData.username}
                       onChange={handleChange}
+                      style={{ borderRadius: '5px', marginBottom: '10px' }}
                       required
                     />
-                    <Form.Label>Enter Username:</Form.Label>
                   </td>
                 </tr>
                 <tr>
+                  <td>
+                    Password
+                  </td>
                   <td>
                     <Form.Control
                       type="password"
@@ -99,12 +121,15 @@ const SignUpForm = () => {
                       placeholder="New Password"
                       value={formData.password}
                       onChange={handleChange}
+                      style={{ borderRadius: '5px', marginBottom: '10px' }}
                       required
                     />
-                    <Form.Label>Password:</Form.Label>
                   </td>
                 </tr>
                 <tr>
+                  <td>
+                    Confirm Password
+                  </td>
                   <td>
                     <Form.Control
                       type="password"
@@ -112,17 +137,21 @@ const SignUpForm = () => {
                       placeholder="Confirm New Password"
                       value={formData.password1}
                       onChange={handleChange}
+                      style={{ borderRadius: '5px', marginBottom: '10px' }}
                       required
                     />
-                    <Form.Label>Confirm Password:</Form.Label>
                   </td>
                 </tr>
                 <tr>
+                  <td>
+                   Select Security Question
+                  </td>
                   <td>
                     <Form.Control
                       as="select"
                       value={formData.securityQuestion}
                       onChange={handleDropdownChange1}
+                      style={{ borderRadius: '5px', marginBottom: '10px' }}
                       required
                     >
                       <option>Select Security Question</option>
@@ -139,10 +168,12 @@ const SignUpForm = () => {
                         What is the name of the place you were born?
                       </option>
                     </Form.Control>
-                    <Form.Label>Select Security Question:</Form.Label>
                   </td>
                 </tr>
                 <tr>
+                  <td>
+                    Answer Security Question
+                  </td>
                   <td>
                     <Form.Control
                       type="text"
@@ -150,27 +181,30 @@ const SignUpForm = () => {
                       placeholder="Enter Your Answer for Security Question"
                       value={formData.securityAnswer}
                       onChange={handleChange}
+                      style={{ borderRadius: '5px', marginBottom: '10px' }}
                       required
-                    />
-                    <Form.Label>Answer Security Question:</Form.Label>
+                    /></td>
+                </tr>
+                <tr>
+                  <td colSpan="2">
+                    <Button type="submit" variant="outline-success" style={{ width: '100%', borderRadius: '5px' }}>
+                      Create Account
+                    </Button>
                   </td>
                 </tr>
                 <tr>
                   <td colSpan="2">
-                    <Button type="submit" variant="outline-success" className={styles1.fullWidthButton}>
-                      Create Account
+                    <Button variant="outline-dark" style={{ width: '100%', borderRadius: '5px' }} onClick={handleToLogin}>
+                      Back To LogIn
                     </Button>
                   </td>
                 </tr>
               </tbody>
             </Table>
-
-          </form>
-          
-          
-          
+          </Form>
         </div>
       </div>
+      <Footer /> {/* Footer component always at the bottom */}
     </div>
   );
 };
