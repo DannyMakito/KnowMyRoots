@@ -16,11 +16,13 @@ import ContactUsLogedIn from './components/ContactUsLogedIn';
 import { Col, Container, Row } from 'react-bootstrap';
 import Footer from './components/Footer';
 import ChatBoard from './components/ChatBoard';
+import Library from './components/Library';
+
 
 function App() {
 
   return (
-    <Container>
+   
       <Row>
         <Col md={12}>
           <div style={{ minHeight: '100vh' }} className={styles.backgroundImage}>
@@ -60,6 +62,12 @@ function App() {
                   element=
                   {<SignUpForm />}
                 />
+
+                <Route path="/library"
+                  element=
+                  {<Library />}
+                />
+
                 <Route path="/signin"
                   element=
                   {<LogInForm />}
@@ -80,7 +88,7 @@ function App() {
           </div>
         </Col>
       </Row>
-    </Container>
+   
 
   );
 }

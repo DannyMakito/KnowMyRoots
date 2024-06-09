@@ -26,7 +26,7 @@ function Footer(){
                         <hr/>
                             <div><Link to="/">Home</Link></div>
                             <div><Link to="/aboutus">about</Link></div>
-                            <div><Link to="/">contacts</Link></div>
+                            <div><Link to="/library">contacts</Link></div>
                             <div><Link to="/selection">new</Link></div>
                         </Col>
 

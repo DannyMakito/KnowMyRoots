@@ -15,8 +15,8 @@ export default function Home() {
   };
 
   return (
-    <div className={styles.fullHeight}>
-    <div className={styles.pageContainer}>
+    <div  className={styles.bcard} >
+    <div >
       <Navbar />
       <div className={styles.contentWrap}>
         <Card className={styles.navComp}>
