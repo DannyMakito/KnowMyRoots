@@ -61,14 +61,14 @@ function App() {
                   {<SignUpForm />}
                 />
 
-<<<<<<< HEAD
+
                 
-=======
+
                 <Route path="/library"
                   element=
                   {<Library />}
                 />
->>>>>>> e313207cc4408bf40aa4f94a0d3f0478057053cb
+
 
                 <Route path="/signin"
                   element=
