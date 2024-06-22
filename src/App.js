@@ -3,11 +3,8 @@ import './App.css';
 import LogInForm from './components/LogInForm';
 import SignUpForm from './components/SignUpForm ';
 import Home from './components/Home';
-import Navbar from './components/NavBar';
-import SearchBar from './components/EnterURL';
 import ContactUs from './components/ContactUs';
 import AboutUs from './components/AboutUs';
-import ContentMenu from './components/ContentMenu';
 import { useEffect, useState } from 'react';
 import styles from './components/style.module.css'
 import Darshboard from './components/Darshboard';
@@ -17,10 +14,11 @@ import { Col, Container, Row } from 'react-bootstrap';
 import Footer from './components/Footer';
 import ChatBoard from './components/ChatBoard';
 
+
 function App() {
 
   return (
-    <Container>
+   
       <Row>
         <Col md={12}>
           <div style={{ minHeight: '100vh' }} className={styles.backgroundImage}>
@@ -60,6 +58,9 @@ function App() {
                   element=
                   {<SignUpForm />}
                 />
+
+                
+
                 <Route path="/signin"
                   element=
                   {<LogInForm />}
@@ -80,7 +81,7 @@ function App() {
           </div>
         </Col>
       </Row>
-    </Container>
+   
 
   );
 }

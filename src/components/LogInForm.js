@@ -3,7 +3,6 @@ import { Form, Button, Table } from 'react-bootstrap';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import styles from './styles.css';
-import ContentMenu from './ContentMenu';
 import styles1 from './ContentMenu.module.css'; // Import CSS file for styling
 import { Link } from 'react-router-dom';
 import LogInNavbar from './LogInNavbar';
@@ -18,7 +17,9 @@ const LogInForm = () => {
 
     const [username, setUsername] = useState('');
 
-    const [loggedIn, setloggedIn] = useState();
+    const [loggedIn, setLoggedIn] = useState(false);
+
+    const [prefName, setPrefName] = useState(null);
 
     // Effect to load username from local storage on component mount
     useEffect(() => {
@@ -60,8 +61,7 @@ const LogInForm = () => {
                 }
             );
 
-            console.log('response.data.status: ' + response.data.status);
-            console.log('response.data.status: ' + response.data);
+            //console.log('response.data.status: ', response.data);
             if (response.data.status) {
                 setUsername(formData.username);
                 localStorage.setItem('username', formData.username); // Store username in local storage
@@ -79,9 +79,10 @@ const LogInForm = () => {
         try {
             const response = await axios.get(`http://localhost/KnowMyRoots-KnowMyRoots-Bankend/user-api.php?username=${username}`);
             console.log(response.data);
-            setloggedIn(response.data);
+            setLoggedIn(response.data);
         } catch (error) {
             console.error('Error fetching login status:', error);
+            alert(error.message);
         }
     };
 
@@ -101,9 +102,11 @@ const LogInForm = () => {
     return (
         <div className='app-container'>
             <Navbar />
-            <div className='login-container' style={{width: '60vw', marginLeft: 'auto', 
-            marginRight: 'auto', marginTop: '8%', marginBottom: '8%',
-            borderRadius: '5px', backgroundColor: '#efe7e7', padding: '3%' }}>
+            <div className='login-container' style={{
+                width: '60vw', marginLeft: 'auto',
+                marginRight: 'auto', marginTop: '8%', marginBottom: '8%',
+                borderRadius: '5px', backgroundColor: '#efe7e7', padding: '3%'
+            }}>
                 <div className='login-form'>
                     <Form onSubmit={handleSubmit}>
                         <Table striped bordered hover responsive>
@@ -112,12 +115,12 @@ const LogInForm = () => {
                                     <td colSpan="2"><h4 className='text-center'>LogIn Credentials</h4></td>
                                 </tr>
                                 <tr>
-                                    <td>Username</td>
+                                    <td>Email</td>
                                     <td>
                                         <Form.Control
-                                            type="text"
+                                            type="email"
                                             name="username"
-                                            placeholder="Enter username"
+                                            placeholder="example@gmail.com"
                                             value={formData.username}
                                             onChange={handleChange}
                                             required
@@ -145,7 +148,7 @@ const LogInForm = () => {
                                 <tr>
                                     <td colSpan="2">
                                         <Link to="/reset" className='text-center' >
-                                            <Button style={{color: 'black'}} variant="outline-warning" className={styles1.fullWidthButton}  >
+                                            <Button style={{ color: 'black' }} variant="outline-warning" className={styles1.fullWidthButton}>
                                                 Reset Password
                                             </Button>
                                         </Link>
@@ -154,7 +157,7 @@ const LogInForm = () => {
                                 <tr>
                                     <td colSpan="2">
                                         <Link to="/signup" className='text-center' >
-                                            <Button variant="outline-dark" className={styles1.fullWidthButton}  >
+                                            <Button variant="outline-dark" className={styles1.fullWidthButton}>
                                                 Don't have an account? Sign up
                                             </Button>
                                         </Link>

@@ -115,3 +115,16 @@
     100% { transform: rotate(360deg); }
   }
   
+
+
+  .parent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+  }
+
+  .child {
+    margin-right: 10px;
+  }
+
+  

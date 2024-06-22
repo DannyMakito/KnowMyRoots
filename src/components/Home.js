@@ -15,8 +15,8 @@ export default function Home() {
   };
 
   return (
-    <div className={styles.fullHeight}>
-    <div className={styles.pageContainer}>
+    <div  className={styles.bcard} >
+    <div >
       <Navbar />
       <div className={styles.contentWrap}>
         <Card className={styles.navComp}>
@@ -24,7 +24,7 @@ export default function Home() {
             <Card.Title className="text-center"> {/* Center align the title */}
               <h1>Welcome To <i>KnowMyRoots</i> Web</h1>
             </Card.Title>
-            <Card.Text>
+            <Card.Text className="text-center">
               <p>The purpose is to help a user find and know more about the roots of their culture.</p>
             </Card.Text>
             <div className="text-center"> {/* Center align the button */}

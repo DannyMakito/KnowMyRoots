@@ -30,7 +30,6 @@ const ServiceSection = () => {
                             Recipe Sharing: A section for traditional recipes, with videos and blogs from people sharing their 
                             culinary heritage.
                           </Card.Text>
-                          <Button variant="primary">Go somewhere</Button>
                         </Card.Body>
                       </Card>
 
@@ -40,10 +39,9 @@ const ServiceSection = () => {
                         <div class="main-heading">Name finder</div>
                         <div class="underline mx-auto"></div>
                           <Card.Text>
-                            With our powerfuul search engine you find the meaning, history of your cultural name or 
+                            With our powerful search engine you find the meaning, history of your cultural name or 
                             even get ideas for baby names 
                           </Card.Text>
-                          <Button variant="primary">Go somewhere</Button>
                         </Card.Body>
                       </Card>
 
@@ -56,7 +54,6 @@ const ServiceSection = () => {
                             Some quick example text to build on the card title and make up the
                             bulk of the card's content.
                           </Card.Text>
-                          <Button variant="primary">Go somewhere</Button>
                         </Card.Body>
                       </Card>
             </Row>

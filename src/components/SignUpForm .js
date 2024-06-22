@@ -67,6 +67,7 @@ const SignUpForm = () => {
       alert('You have Successfully Created Account');
     } catch (error) {
       setError('Error: ' + error.message);
+      alert(error.message);
     }
   };
 
@@ -84,9 +85,11 @@ const SignUpForm = () => {
         justifyContent: 'center',
         alignItems: 'center'
       }}>
-        <div className='signup-container'  style={{width: '60vw', marginLeft: 'auto', 
-            marginRight: 'auto', marginTop: '8%', marginBottom: '8%',
-            borderRadius: '5px', backgroundColor: '#efe7e7', padding: '3%' }}>
+        <div className='signup-container' style={{
+          width: '60vw', marginLeft: 'auto',
+          marginRight: 'auto', marginTop: '8%', marginBottom: '8%',
+          borderRadius: '5px', backgroundColor: '#efe7e7', padding: '3%'
+        }}>
           {error && <p style={{ color: 'red' }}>{error}</p>}
           <Form onSubmit={handleSubmit}>
             <Table striped bordered hover responsive>
@@ -96,13 +99,13 @@ const SignUpForm = () => {
                 </tr>
                 <tr>
                   <td>
-                    Enter Username
+                    Email
                   </td>
                   <td>
                     <Form.Control
-                      type="text"
+                      type="email"
                       name="username"
-                      placeholder="Enter username"
+                      placeholder="example@gmail.com"
                       value={formData.username}
                       onChange={handleChange}
                       style={{ borderRadius: '5px', marginBottom: '10px' }}
@@ -144,7 +147,7 @@ const SignUpForm = () => {
                 </tr>
                 <tr>
                   <td>
-                   Select Security Question
+                    Select Security Question
                   </td>
                   <td>
                     <Form.Control
